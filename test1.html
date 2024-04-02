@@ -1,0 +1,64 @@
+<p>'cello'</p>
+
+
+
+<h2>Automatic Slideshow</h2>
+                <p>Change image every 2 seconds:</p>
+                
+                <div class="slideshow-container">
+                
+                <div class="mySlides1 fade">
+                  <div class="numbertext1">1 / 3</div>
+                  <img src="logo.png" style="width:100%">
+                  <div class="text1">Caption Text</div>
+                </div>
+                
+                <div class="mySlides1 fade">
+                  <div class="numbertext1">2 / 3</div>
+                  <img src="logo.png" style="width:100%">
+                  <div class="text1">Caption Two</div>
+                </div>
+                
+                <div class="mySlides1 fade">
+                  <div class="numbertext1">3 / 3</div>
+                  <img src="logo.png" style="width:100%">
+                  <div class="text1">Caption Three</div>
+                </div>
+                
+                </div>
+                <br>
+                
+                <div style="text-align:center">
+                  <span class="dot1"></span> 
+                  <span class="dot1"></span> 
+                  <span class="dot1"></span> 
+                </div>
+
+
+
+
+
+                <script>
+let slideIndex1 = 0;
+showSlides1();
+
+function showSlides1() {
+  let b;
+  let slides1 = document.getElementsByClassName("mySlides1");
+  let dots1 = document.getElementsByClassName("dot1");
+  for (b = 0; b < slides1.length; b++) {
+    slides1[b].style.display = "none";  
+  }
+  slideIndex1++;
+  if (slideIndex1 > slides1.length) {slideIndex1 = 1}    
+  for (b = 0; b < dots1.length; b++) {
+    dots1[b].className = dots1[b].className.replace(" active", "");
+  }
+  slides1[slideIndex1-1].style.display = "block";  
+  dots1[slideIndex1-1].className += " active";
+  setTimeout(showSlides1, 2000); // Change image every 2 seconds
+}
+
+
+
+                </script>
